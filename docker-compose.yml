@@ -1,0 +1,43 @@
+# Full stack: API + presentation UI (one command: docker compose up --build)
+#
+# UI:  http://localhost:8080  (static build; calls API at http://localhost:8000)
+# API: http://localhost:8000
+#
+# Requires ./models/bundle.joblib (train with: python backend/scripts/train_models.py)
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ncaa-backend
+    ports:
+      - "8000:8000"
+    environment:
+      NCAA_MODELS_DIR: /app/models
+      # Browser on host must be allowed (SPA runs on host:8080, API on host:8000)
+      NCAA_CORS_ORIGINS: >-
+        http://localhost,
+        http://127.0.0.1,
+        http://localhost:8080,
+        http://127.0.0.1:8080,
+        http://localhost:5173,
+        http://127.0.0.1:5173,
+        http://localhost:3000,
+        http://127.0.0.1:3000
+    volumes:
+      - ./models:/app/models:ro
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8000
+    container_name: ncaa-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
