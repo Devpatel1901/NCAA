@@ -1,7 +1,7 @@
 .page {
   min-height: 100vh;
-  background: linear-gradient(160deg, #0f172a 0%, #1e293b 45%, #0f172a 100%);
-  color: #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
   padding: 1.5rem 2rem 3rem;
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
@@ -16,18 +16,18 @@
   font-weight: 650;
   letter-spacing: -0.02em;
   margin: 0 0 0.5rem;
-  color: #f8fafc;
+  color: #0f172a;
 }
 
 .sub {
   margin: 0 0 1rem;
-  color: #94a3b8;
+  color: #475569;
   line-height: 1.55;
   max-width: 900px;
 }
 
 .sub code {
-  background: #334155;
+  background: #e2e8f0;
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
   font-size: 0.9em;
@@ -44,14 +44,14 @@
   margin-left: 0.35rem;
   padding: 0.35rem 0.6rem;
   border-radius: 6px;
-  border: 1px solid #475569;
-  background: #1e293b;
-  color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
 }
 
 .train-file-label {
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: #1e293b;
 }
 
 .train-file-label input {
@@ -60,25 +60,25 @@
 
 .api-hint {
   font-size: 0.85rem;
-  color: #64748b;
+  color: #475569;
 }
 
 .api-hint code {
-  color: #7dd3fc;
+  color: #2563eb;
 }
 
 .stats-banner {
   max-width: 1400px;
   margin: 0 auto 1rem;
   padding: 0.65rem 1rem;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 8px;
   font-size: 0.95rem;
 }
 
 .stats-banner code {
-  background: rgba(15, 23, 42, 0.6);
+  background: #dbeafe;
   padding: 0.1rem 0.3rem;
   border-radius: 4px;
 }
@@ -98,27 +98,27 @@
 }
 
 .panel {
-  background: rgba(30, 41, 59, 0.85);
-  border: 1px solid #334155;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 .panel.drop-active {
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.35);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
 }
 
 .panel h2 {
   margin: 0 0 0.5rem;
   font-size: 1.15rem;
-  color: #f1f5f9;
+  color: #0f172a;
 }
 
 .hint {
   font-size: 0.88rem;
-  color: #94a3b8;
+  color: #475569;
   margin: 0 0 0.75rem;
   line-height: 1.45;
 }
@@ -126,36 +126,36 @@
 .panel input[type='file'] {
   margin-bottom: 0.75rem;
   font-size: 0.85rem;
-  color: #cbd5e1;
+  color: #1e293b;
 }
 
 .loading {
-  color: #7dd3fc;
+  color: #2563eb;
   margin: 0.5rem 0;
 }
 
 .error {
-  color: #fca5a5;
+  color: #dc2626;
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
 
 .error.soft {
-  color: #fcd34d;
+  color: #b45309;
 }
 
 .meta {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #475569;
   margin: 0 0 0.75rem;
 }
 
 .table-wrap {
   max-height: min(58vh, 640px);
   overflow: auto;
-  border: 1px solid #334155;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  background: #0f172a;
+  background: #ffffff;
 }
 
 .data-table {
@@ -167,7 +167,7 @@
 .data-table thead {
   position: sticky;
   top: 0;
-  background: #1e293b;
+  background: #f8fafc;
   z-index: 1;
 }
 
@@ -175,34 +175,34 @@
 .data-table td {
   text-align: left;
   padding: 0.45rem 0.65rem;
-  border-bottom: 1px solid #293548;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .data-table th {
   font-weight: 600;
-  color: #cbd5e1;
+  color: #1e293b;
 }
 
 .data-table td {
-  color: #e2e8f0;
+  color: #0f172a;
 }
 
 .data-table .num {
   font-variant-numeric: tabular-nums;
-  color: #7dd3fc;
+  color: #2563eb;
   width: 3rem;
 }
 
 .data-table .mono {
   font-family: ui-monospace, monospace;
   font-size: 0.78rem;
-  color: #94a3b8;
+  color: #475569;
 }
 
 .placeholder {
   margin: 0;
   padding: 2rem 1rem;
   text-align: center;
-  color: #64748b;
+  color: #475569;
   font-size: 0.9rem;
 }

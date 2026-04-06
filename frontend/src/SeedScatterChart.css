@@ -1,0 +1,86 @@
+.scatter-panel {
+  max-width: 1400px;
+  margin: 1.25rem auto 2rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  animation: scatterFadeIn 0.35s ease-out;
+}
+
+@keyframes scatterFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scatter-panel h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  color: #1d4ed8;
+}
+
+.scatter-sub,
+.scatter-meta,
+.scatter-placeholder {
+  margin: 0 0 0.65rem;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.scatter-meta {
+  margin-bottom: 0.75rem;
+  color: #1d4ed8;
+}
+
+.scatter-meta span {
+  color: #475569;
+}
+
+.scatter-chart-wrap {
+  width: 100%;
+  min-height: 560px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  padding: 8px;
+}
+
+.scatter-tooltip {
+  background: #ffffff;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  color: #0f172a;
+  max-width: 280px;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.12);
+}
+
+.scatter-panel--empty {
+  border-style: dashed;
+}
+
+.scatter-diag {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: #1d4ed8;
+}
+
+.scatter-diag li {
+  margin: 0.25rem 0;
+}
+
+.recharts-text.recharts-label-list text {
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}

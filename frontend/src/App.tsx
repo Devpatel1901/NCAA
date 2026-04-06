@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import Papa from 'papaparse'
+import { SeedScatterChart } from './SeedScatterChart'
+import { buildScatterPoints } from './seedScatter'
 import './App.css'
 
 const API_BASE = import.meta.env.VITE_API_URL ?? 'http://127.0.0.1:8000'
@@ -242,6 +244,15 @@ function App() {
     })
   }, [refRows, refColumns])
 
+  const refSeedColumn = useMemo(() => pickSeedColumn(refColumns), [refColumns])
+
+  const scatter = useMemo(
+    () => buildScatterPoints(predRows, refRows, refSeedColumn),
+    [predRows, refRows, refSeedColumn],
+  )
+
+  const showScatterBlock = !predLoading && predRows.length > 0 && refRows.length > 0
+
   return (
     <div className="page">
       <header className="header">
@@ -274,19 +285,34 @@ function App() {
               />
             </label>
           )}
-          <span className="api-hint">
+          {/* <span className="api-hint">
             API: <code>{API_BASE}</code>
-          </span>
+          </span> */}
         </div>
       </header>
 
       {matchStats && (
         <div className="stats-banner">
-          Compared on <code>RecordID</code> vs <code>{matchStats.seedCol}</code>:{' '}
-          <strong>{matchStats.matches}</strong> matches / <strong>{matchStats.compared}</strong>{' '}
-          overlapping teams
+          Compared on <code>RecordID</code> vs <code>{matchStats.seedCol}</code>
         </div>
       )}
+
+      {showScatterBlock &&
+        (refSeedColumn ? (
+          <SeedScatterChart
+            points={scatter.points}
+            diagnostics={scatter.diagnostics}
+            seedColName={refSeedColumn}
+          />
+        ) : (
+          <div className="scatter-panel scatter-panel--empty">
+            <h2>Committee vs predicted seed</h2>
+            <p className="scatter-placeholder">
+              Reference CSV must include a seed column (e.g. <code>Seed</code>,{' '}
+              <code>Overall Seed</code>) and <code>RecordID</code> to build the comparison chart.
+            </p>
+          </div>
+        ))}
 
       <div className="grid">
         <section
